@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
-  View,
-  Button
+  View
 } from 'react-native';
 
-import { renderWithProps } from '../helpers'
+import { renderCommonComponent } from '../helpers/strategy'
 
-export default class HomePage extends Component {
+
+export default class CommonComponent extends Component {
     constructor(props){
       super(props);
     }
@@ -17,13 +16,9 @@ export default class HomePage extends Component {
       return (
         <View style={styles.container}>
           <Text style={styles.instructions}>
-            Home Page
+            HELLO I am a Common Component in Different Projects
           </Text>
-          {renderWithProps('signUpComp', {...this.props, olo:"OLOLO"})}
-          <Button
-            title="Sign Up From Home Page"
-            onPress={() => this.props.navigation.navigate('SignUp')}
-          />
+          {renderCommonComponent()}
         </View>
       );
     }
@@ -46,7 +41,6 @@ export default class HomePage extends Component {
       textAlign: 'center',
       color: '#333333',
       marginBottom: 5,
-      fontSize: 40
-    }
+    },
   });
   

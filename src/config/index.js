@@ -1,5 +1,13 @@
 export default config = {
     homeComp: 'HomePage',
-    signUpComp: 'SignUpCanada',
-    loginComp: 'LoginCanada'
+    signUpComp: 'SignUpFrance',
+    loginComp: 'LoginFrance',
+    countries: {
+        canada: {
+            show: false
+        },
+        france: {
+            show: true
+        }
+    }
 }

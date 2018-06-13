@@ -17,8 +17,20 @@ const allComponents = {
 
 export const renderComponent = (whichComponent) => {
     //Refactor it with a default component
-    if(allComponents[config[whichComponent]])
+    if(allComponents[config[whichComponent]]){
         return allComponents[config[whichComponent]].type
+    }
+    else
+        return null
+};
+
+export const renderWithProps = (whichComponent, props) => {
+    //Refactor it with a default component
+    if(allComponents[config[whichComponent]]){
+        //let myComp = {...allComponents[config[whichComponent]], props: {...props}};
+        return {...allComponents[config[whichComponent]], props: {...props}};
+        //return myComp
+    }
     else
         return null
 };

@@ -21,11 +21,14 @@ export default class SignUpCanada extends Component {
         </Text>
         <Button 
           onPress={() => this.props.navigation.navigate('Login')}
-          title="Have Account?"
+          title="Have Account, Canada?"
         />
         <Button
-          title="Go to Customized Component"
-          onPress={() => this.props.navigation.navigate('Home', {param1: 'Hello There', param2: 'So What is happening?'})}
+          title="Go to Customized Component2"
+          onPress={() => {
+            console.log(this.props); 
+            this.props.navigation.navigate('Login', {param1: 'Hello There', param2: 'So What is happening?'})
+          }}
         />
       </View>
     );

@@ -20,7 +20,7 @@ export default class SignUpFrance extends Component {
         </Text>
         <Button 
           onPress={() => this.props.navigation.navigate('Login')}
-          title="Have Account?"
+          title="Have Account France?"
         />
       </View>
     );

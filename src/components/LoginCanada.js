@@ -7,6 +7,7 @@ import {
 
 export default class LoginCanada extends Component {
   render() {
+    console.log('PROPS in Login Canada', this.props)
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
