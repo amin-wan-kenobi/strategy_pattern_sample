@@ -8,11 +8,11 @@ import LoginCanada from '../components/LoginCanada';
 import config from '../config';
 
 const allComponents = {
-    HomePage: React.createFactory(HomePage),
-    SignUpFrance: React.createFactory(SignUpFrance),
-    SignUpCanada: React.createFactory(SignUpCanada),
-    LoginCanada: React.createFactory(LoginCanada),
-    LoginFrance: React.createFactory(LoginFrance)
+    HomePage: <HomePage />,//React.createFactory(HomePage),
+    SignUpFrance: <SignUpFrance />,//React.createFactory(SignUpFrance),
+    SignUpCanada: <SignUpCanada />,//React.createFactory(SignUpCanada),
+    LoginCanada: <LoginCanada />,//React.createFactory(LoginCanada),
+    LoginFrance: <LoginFrance />//React.createFactory(LoginFrance)
 }
 
 export const renderComponent = (whichComponent) => {
