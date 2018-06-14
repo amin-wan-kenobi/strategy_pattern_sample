@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
   Button
 } from 'react-native';
-
-import { renderWithProps } from '../helpers'
+import CommonComponent from './CommonComponent';
+import { renderWithProps, renderHeader } from '../helpers'
 
 export default class HomePage extends Component {
+    static navigationOptions = () => {
+      return {
+        title: renderHeader('homeComp')
+      };
+    };
     constructor(props){
       super(props);
     }
@@ -19,11 +23,12 @@ export default class HomePage extends Component {
           <Text style={styles.instructions}>
             Home Page
           </Text>
-          {renderWithProps('signUpComp', {...this.props, olo:"OLOLO"})}
+          {renderWithProps('testComp', {...this.props, text:"Hello There"})}
           <Button
-            title="Sign Up From Home Page"
+            title="Part of Home Component - Click to go to SignUp"
             onPress={() => this.props.navigation.navigate('SignUp')}
           />
+          <CommonComponent />
         </View>
       );
     }

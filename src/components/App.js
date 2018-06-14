@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { createStackNavigator } from 'react-navigation';
 
-import { renderComponent } from '../helpers';
+import { renderForNavigation } from '../helpers';
 
 export default class App extends Component {
   render(){
@@ -12,9 +12,9 @@ export default class App extends Component {
 } 
 
 const RootStack = createStackNavigator({
-    Home: {screen: renderComponent('homeComp')},
-    SignUp: {screen: renderComponent('signUpComp')},
-    Login: {screen: renderComponent('loginComp')}
+    Home: {screen: renderForNavigation('homeComp')},
+    SignUp: {screen: renderForNavigation('signUpComp')},
+    Login: {screen: renderForNavigation('loginComp')}
   },
   {
     initialRouteName: 'Home'

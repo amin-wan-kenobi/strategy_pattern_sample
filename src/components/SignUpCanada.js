@@ -6,8 +6,15 @@ import {
   Button
 } from 'react-native';
 
+import { renderHeader } from '../helpers'
 
 export default class SignUpCanada extends Component {
+  static navigationOptions = () => {
+    return {
+      title: renderHeader('signUpComp')
+    };
+  };
+
   constructor(props){
     super(props);
     console.log('Props to Signup Canada', props)

@@ -1,36 +1,30 @@
-import React from 'react';
-import HomePage from '../components/HomePage';
-import SignUpFrance from '../components/SignUpFrance';
-import SignUpCanada from '../components/SignUpCanada';
-import LoginFrance from '../components/LoginFrance';
-import LoginCanada from '../components/LoginCanada';
+//Purely in charge of rendering components
+//Only uses config file and allComponent files
 
 import config from '../config';
+import allComponents from '../config/all-components';
 
-const allComponents = {
-    HomePage: <HomePage />,//React.createFactory(HomePage),
-    SignUpFrance: <SignUpFrance />,//React.createFactory(SignUpFrance),
-    SignUpCanada: <SignUpCanada />,//React.createFactory(SignUpCanada),
-    LoginCanada: <LoginCanada />,//React.createFactory(LoginCanada),
-    LoginFrance: <LoginFrance />//React.createFactory(LoginFrance)
-}
-
-export const renderComponent = (whichComponent) => {
+export const renderForNavigation = (whichComponent) => {
     //Refactor it with a default component
-    if(allComponents[config[whichComponent]]){
-        return allComponents[config[whichComponent]].type
+    let componentName = config[whichComponent].name;
+    if(allComponents[componentName] && allComponents[componentName].type){
+        return allComponents[componentName].type
     }
-    else
-        return null
+    // else
+    //     return null
 };
 
 export const renderWithProps = (whichComponent, props) => {
     //Refactor it with a default component
-    if(allComponents[config[whichComponent]]){
-        //let myComp = {...allComponents[config[whichComponent]], props: {...props}};
-        return {...allComponents[config[whichComponent]], props: {...props}};
-        //return myComp
+    let componentName = config[whichComponent].name;
+    let componentRender = config[whichComponent].render;
+    if(allComponents[componentName] && componentRender){
+        return {...allComponents[config[whichComponent].name], props: {...props}};
     }
     else
         return null
 };
+
+export const renderHeader = (whichComponent) => {
+    return config[whichComponent].headerText;
+}
