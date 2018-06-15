@@ -1,4 +1,4 @@
-# How to run
+# Run the project
 Download the project, run
 ```shell
 npm install
@@ -11,7 +11,7 @@ or
 ```shell
 react-native run-android
 ```
-# How does the project work
+# Files of the project
 ## Config folder
 ### /config/all-components.js 
 It holds the list of the components we have with a key in a json object. If you want a component to have flexibility and be associated with a config file you should add it to this file.
