@@ -4,8 +4,14 @@ import {
   Text,
   View
 } from 'react-native';
+import { renderHeader } from '../helpers'
 
 export default class LoginCanada extends Component {
+  static navigationOptions = () => {
+    return {
+      title: renderHeader('loginComp')
+    };
+  };
   render() {
     console.log('PROPS in Login Canada', this.props)
     return (
@@ -13,6 +19,22 @@ export default class LoginCanada extends Component {
         <Text style={styles.welcome}>
           Login Canada
         </Text>
+        <Text style={styles.welcome}>
+          Different Login Component
+        </Text>
+        {
+          this.props.navigation.state.params ? 
+            <View>
+              <Text style={{textAlign: 'center'}}>
+                First Param: {this.props.navigation.state.params.param1}
+              </Text>
+              <Text style={{textAlign: 'center'}}>
+                Second Param: {this.props.navigation.state.params.param2}
+              </Text>
+            </View>
+            :
+            null
+        }
       </View>
     );
   }

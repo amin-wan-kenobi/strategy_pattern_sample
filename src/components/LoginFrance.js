@@ -4,10 +4,15 @@ import {
   Text,
   View
 } from 'react-native';
+import { renderHeader } from '../helpers'
 
 export default class LoginFrance extends Component {
+  static navigationOptions = () => {
+    return {
+      title: renderHeader('loginComp')
+    };
+  };
   render() {
-    console.log('PROPS in Login France', this.props)
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>

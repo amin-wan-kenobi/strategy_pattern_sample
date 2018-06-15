@@ -15,11 +15,6 @@ export default class SignUpCanada extends Component {
     };
   };
 
-  constructor(props){
-    super(props);
-    console.log('Props to Signup Canada', props)
-  }
-
   render() {
     return (
       <View style={styles.container}>
@@ -31,10 +26,10 @@ export default class SignUpCanada extends Component {
           title="Have Account, Canada?"
         />
         <Button
-          title="Go to Customized Component2"
+          title="Navigate to Login page with two params"
           onPress={() => {
             console.log(this.props); 
-            this.props.navigation.navigate('Login', {param1: 'Hello There', param2: 'So What is happening?'})
+            this.props.navigation.navigate('Login', {param1: 'First From SignUp Page', param2: 'Second from SignUp Page'})
           }}
         />
       </View>

@@ -4,7 +4,7 @@ import SignUpFrance from '../components/SignUpFrance';
 import SignUpCanada from '../components/SignUpCanada';
 import LoginFrance from '../components/LoginFrance';
 import LoginCanada from '../components/LoginCanada';
-import TestComponent from '../components/TestComponent';
+import ComponentWithProps from '../components/ComponentWithProps';
 
 export default allComponents = {
     HomePage: <HomePage />,
@@ -12,5 +12,5 @@ export default allComponents = {
     SignUpCanada: <SignUpCanada />,
     LoginCanada: <LoginCanada />,
     LoginFrance: <LoginFrance />,
-    TestComponent: <TestComponent />
+    ComponentWithProps: <ComponentWithProps />
 }

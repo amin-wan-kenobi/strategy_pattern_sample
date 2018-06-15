@@ -5,7 +5,7 @@ import {
   View,
   Button
 } from 'react-native';
-import CommonComponent from './CommonComponent';
+import PartiallyRenderedComponent from './PartiallyRenderedComponent';
 import { renderWithProps, renderHeader } from '../helpers'
 
 export default class HomePage extends Component {
@@ -23,12 +23,17 @@ export default class HomePage extends Component {
           <Text style={styles.instructions}>
             Home Page
           </Text>
-          {renderWithProps('testComp', {...this.props, text:"Hello There"})}
+          <Text style={{textAlign: 'center', fontSize:16}}>
+            Home page will contain a 1-Fixed Signup Button, 
+            2-PartiallyRenderedComponent (always shows) and 
+            3-ComponentWithProps which we decide to render or not
+          </Text>
           <Button
-            title="Part of Home Component - Click to go to SignUp"
+            title="1-Fixed SignUp Button"
             onPress={() => this.props.navigation.navigate('SignUp')}
           />
-          <CommonComponent />
+          <PartiallyRenderedComponent />
+          {renderWithProps('compWithProps', {...this.props, text:"HomeComponent Props"})}
         </View>
       );
     }
@@ -37,15 +42,10 @@ export default class HomePage extends Component {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
+      justifyContent: 'space-around',
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
-      padding: 100
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
+      padding: 10
     },
     instructions: {
       textAlign: 'center',
